@@ -1,0 +1,6 @@
+iambic-pentameter:t
+dactylic-hexameter:f
+hendecasyllabic:t
+haiku:f
+elegiac-couplet:t
+trochaic-tetrameter:f
