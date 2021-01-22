@@ -6,7 +6,7 @@ Poetron is a discord bot that recognizes phrases written in meter and repeats th
 - Dactylic hexameter
 - Hendecasyllabic
 - Haikus
-- Elegiac-couplets
+- Elegiac couplets
 - Trochaic tetrameter
 and can easily support any others which can be entirely described as a sequence of stressed and unstressed syllables, with a few that can be either.
 

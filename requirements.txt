@@ -1,0 +1,3 @@
+discord python module
+pronouncing python module
+re python module
