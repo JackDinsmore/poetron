@@ -127,4 +127,5 @@ It expresses short syllables as `u` and long ones as `-`.
             name = message.author.nick
             await message.channel.send(embed=discord.Embed(color=COLOR, description="_"+text+"_\n--"+name+" ("+meter+")"))
 
+
 client.run(os.getenv('TOKEN'))
