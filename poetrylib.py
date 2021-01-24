@@ -34,7 +34,7 @@ enabled = {
 }
 
 MODIFICATIONS = {"traveller":['-uu', '-u'], "@":['u', '-'], "&":['u', '-'], "%":['u-'], "hexameter":['--uu', 'u-uu'], "pentameter":['u-uu', '-u-u'],"catullus":['u-u'],
-    "providence":['-uu', '-u-'], "fountains":['-u', '--'], "indolent":['-uu', '-u-'], "toil":['-', '-u'], '/':['u', '-'], '+':['u', '-'], '-':['-u'] }
+    "providence":['-uu', '-u-'], "fountains":['-u', '--'], "indolent":['-uu', '-u-'], "toil":['-', '-u'], '/':['u', '-'], '+':['u', '-'], '-':['-u'], "myself":['--', 'u-'] }
 
 DESCRIPTION = {"iambic-pentameter":"`u-u-u-u-u-` or `-uu-u-u-u-`. Shakespeare's meter, and the most common English meter.",
 "dactylic_hexameter":"`-U-U-U-U-uu-x`, where each `U` represents either `uu` or `-`, and `x` can be either `-` or `u`, your choice. Vergil's meter, and a common one in Latin epic poetry. Not very common in English.",
@@ -319,6 +319,5 @@ def init():
 
 if __name__ == "__main__":
     init()
-    print(getPatterns("circumference"))
-    print(fitToMeter('''_Double, double, toil and trouble;
-Fire burn and cauldron bubble'''))
+    print(getPatterns("myself"))
+    print(fitToMeter('''i don't quite know myself, i'd love to see'''))
