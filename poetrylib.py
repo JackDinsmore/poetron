@@ -34,7 +34,7 @@ enabled = {
 }
 
 MODIFICATIONS = {"traveller":['-uu', '-u'], "@":['u', '-'], "&":['u', '-'], "%":['u-'], "hexameter":['--uu', 'u-uu'], "pentameter":['u-uu', '-u-u'],"catullus":['u-u'],
-    "providence":['-uu', '-u-'], "fountains":['-u', '--'], "indolent":['-uu', '-u-'], "toil":['-', '-u'], '/':['u', '-'], '+':['u', '-'], '-':['-u'], "myself":['--', 'u-'] }
+    "providence":['-uu', '-u-'], "fountains":['-u', '--'], "indolent":['-uu', '-u-'], "toil":['-', '-u'], '/':['u', '-'], '+':['u', '-'], '-':['-u'], "myself":['u-', '--'] }
 
 DESCRIPTION = {"iambic-pentameter":"`u-u-u-u-u-` or `-uu-u-u-u-`. Shakespeare's meter, and the most common English meter.",
 "dactylic_hexameter":"`-U-U-U-U-uu-x`, where each `U` represents either `uu` or `-`, and `x` can be either `-` or `u`, your choice. Vergil's meter, and a common one in Latin epic poetry. Not very common in English.",
@@ -68,13 +68,15 @@ MAX_LENGTH = 25
 
 
 def getPatterns(word):
+
+    # Strip ending punct.
+    while word[-1].upper()==word[-1].lower():
+        word = word[:-1]
+    
     try:
         return MODIFICATIONS[word.lower()]
     except:
         pass
-
-    while word[-1].upper()==word[-1].lower():
-        word = word[:-1]
 
     # Handle numbers
     n=None
@@ -314,10 +316,7 @@ def saveEnabled():
 def init():
     loadEnabled()
     makeMeters()
-    
-    print("Initialization completed")
 
 if __name__ == "__main__":
     init()
-    print(getPatterns("myself"))
     print(fitToMeter('''i don't quite know myself, i'd love to see'''))

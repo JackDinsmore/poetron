@@ -48,7 +48,6 @@ It expresses short syllables as `u` and long ones as `-`.
                 text+="**"+word+"**: "
                 try:
                     patterns = pl.getPatterns(word)
-                    print(patterns)
                 except:
                     await message.channel.send(embed=discord.Embed(color=COLOR, description="Don't know that word, chief."))
                     return
