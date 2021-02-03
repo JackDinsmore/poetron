@@ -26,11 +26,11 @@ METERS = [
 
 enabled = {
     "iambic-pentameter":True,
-    "dactylic-hexameter":False,
+    "dactylic-hexameter":True,
     "hendecasyllabic":True,
     "haiku":False,
     "elegiac-couplet":True,
-    "trochaic-tetrameter":False,
+    "trochaic-tetrameter":True,
 }
 
 MODIFICATIONS = {"traveller":['-uu', '-u'], "@":['u', '-'], "&":['u', '-'], "%":['u-'], "hexameter":['--uu', 'u-uu'], "pentameter":['u-uu', '-u-u'],"catullus":['u-u'],
@@ -319,4 +319,4 @@ def init():
 
 if __name__ == "__main__":
     init()
-    print(fitToMeter('''i don't quite know myself, i'd love to see'''))
+    print(fitToMeter('''Girls with foie gras whom getting in trouble delighted in earnest'''))
