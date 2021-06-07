@@ -15,3 +15,8 @@ The main bot is contained in _main.py_, while the major functions are contained 
 
 ## To do:
 The python module I have installed to get syllable stresses is not perfect, and I need to modify it so that it is more forgiving.
+
+---
+
+## Bug fix report
+- **June 6, 2021**: Prevented spoiler tags from being removed and ignored all messages with single letters that are not A and I.

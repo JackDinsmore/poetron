@@ -97,6 +97,9 @@ def getPatterns(word):
     if word.endswith('.eu') or word.endswith('.au'):
         res = getPatterns[word[:-3]]
         return [r + '--' for r in res]
+
+    if len(word) == 1 and word.lower() != 'a' and word.lower() != 'i':
+        return None
     
 
     phones = pn.phones_for_word(word)
@@ -229,6 +232,9 @@ class ScanNode: # A state machine indicating a certain way to scan a passage.
 def fitToMeter(text):
     maxNumNodes = 0
     words = re.split(' |\n', text)
+
+    end_puncs = [""] * len(words)
+    start_puncs = [""] * len(words)
     
     for i in range(len(words)):
         if len(words[i]) > MAX_LENGTH:
@@ -236,8 +242,10 @@ def fitToMeter(text):
     
         # Strip end punctuation
         while words[i][-1].upper()==words[i][-1].lower() and words[i][-1] not in ['.', ',', '!', '?', ':', ';', '-']:
+            end_puncs[i] = words[i][-1] + end_puncs[i]
             words[i] = words[i][:-1]
         while words[i][0].upper()==words[i][0].lower():
+            start_puncs[i] = start_puncs[i] + words[i][0]
             words[i] = words[i][1:]
 
         # Throw in other cases
@@ -283,7 +291,7 @@ def fitToMeter(text):
                 for i in range(len(words)):
                     if i in nodes[0][0].breaks[index]:
                         text += '\n'
-                    text += words[i] + ' '
+                    text += start_puncs[i] + words[i] + end_puncs[i] + ' '
                 return meters[index][0], text[:-1]
         del nodes[0]
     return None, None

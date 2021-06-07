@@ -32,7 +32,7 @@ It expresses short syllables as `u` and long ones as `-`.
 - `!poetron add`: reinstate an item from the list of meters Poetron understands
 - `!poetron help [meter]`: explain the meter [meter] (see `!poetron ls` for meter types)
 - `!poetron example [meter]`: give an example of the meter [meter] (see `!poetron ls` for meter types)
-- `!poetron shutdown`: shut down Poetron."""))
+- `!poetron exit`: shut down Poetron."""))
         
         elif command[0] == 'help':
             if command[1] in pl.DESCRIPTION.keys():
@@ -108,7 +108,7 @@ It expresses short syllables as `u` and long ones as `-`.
                 else:
                     await message.channel.send(embed=discord.Embed(color=COLOR, description="Don't know that meter, chief."))
 
-        elif command[0] == 'shutdown' and len(command) == 1:
+        elif command[0] == 'exit' and len(command) == 1:
             await message.channel.send(embed=discord.Embed(color=COLOR, description="Bye, chief!"))
             sys.exit()
 
