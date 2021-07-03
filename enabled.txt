@@ -1,6 +1,6 @@
 iambic-pentameter:t
-dactylic-hexameter:t
-hendecasyllabic:t
+dactylic-hexameter:f
+hendecasyllabic:f
 haiku:f
-elegiac-couplet:t
-trochaic-tetrameter:t
+elegiac-couplet:f
+trochaic-tetrameter:f
